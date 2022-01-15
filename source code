@@ -1,0 +1,52 @@
+#assigning location with numbers
+
+
+#input_name
+print("Welcome to KT Bus Service,Please Enter Your Name: ")
+passenger_name=str(input())
+
+#passenger_choice
+print("Are you interested in booking seat for our Neerolapalam to Feroke bus ?\n Respond Y for YES or N for NO")
+
+choice=str(input())
+print(choice)
+
+if (choice=='N'):
+  print("Thank You for Choosing our service")
+elif (choice=='Y'):
+    print("Select Source stop")
+else:
+  print("Syntax error")
+
+#choosing source stop
+
+print("1.Neerolpalam")
+print("2.Devathiyal")
+print("3.Kohinoor")
+print("4.University")
+print("5.Ramanattukara")
+print("6.Chungam")
+print("7.Feroke")
+
+source_station = input("choose source station(1/2/3/4/5/6/7): ")
+destination=input("choose source station(1/2/3/4/5/6/7): ")
+
+if(source_station>destination):
+  print("Destination stop should be after source stop, or you can book for our Feroke to Neerolpalam bus in future when the service is operational. Thank you for using our service")
+else:
+  print("You are going from",source_station,"to",destination)
+  print("proceeding to payment....")
+
+
+#payment method
+trip_cost=int(destination-source_station)*10
+print("Your trip cost is Rs",trip_cost,". Are you ready to book ? Please respond with Y or N")
+ready_to_pay=str(input())
+
+#if customer is ready to pay
+if(ready_to_pay=='N'):
+  print("Sorry to see you go, we will be pleased to welcome you again in future")
+elif(ready_to_pay=='Y'):
+  print("Thank you for booking your ticket from",source_station,"to", destination)
+else:
+  print("Booking error,try again")
