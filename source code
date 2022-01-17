@@ -1,12 +1,17 @@
 #assigning location with numbers
 
-
+Kohinoor=1
+University=2
+Kakkanchery=3
+Ramanattukara=4
+Feroke=5
 #input_name
 print("Welcome to KT Bus Service,Please Enter Your Name: ")
 passenger_name=str(input())
 
+
 #passenger_choice
-print("Are you interested in booking seat for our Neerolapalam to Feroke bus ?\n Respond Y for YES or N for NO")
+print("Hi",passenger_name,"Are you interested in booking seat for our Neerolapalam to Feroke bus ?\n Respond Y for YES or N for NO")
 
 choice=str(input())
 print(choice)
@@ -20,16 +25,14 @@ else:
 
 #choosing source stop
 
-print("1.Neerolpalam")
-print("2.Devathiyal")
-print("3.Kohinoor")
-print("4.University")
-print("5.Ramanattukara")
-print("6.Chungam")
-print("7.Feroke")
+print("1.Kohinoor")
+print("2.University")
+print("3.Kakkanchery")
+print("4.Ramanattukara")
+print("5.Feroke")
+source_station = int(input("choose source station(1/2/3/4/5): "))
+destination=int(input("choose destination(1/2/3/4/5): "))
 
-source_station = input("choose source station(1/2/3/4/5/6/7): ")
-destination=input("choose source station(1/2/3/4/5/6/7): ")
 
 if(source_station>destination):
   print("Destination stop should be after source stop, or you can book for our Feroke to Neerolpalam bus in future when the service is operational. Thank you for using our service")
@@ -39,7 +42,7 @@ else:
 
 
 #payment method
-trip_cost=int(destination-source_station)*10
+trip_cost=(destination-source_station)*10
 print("Your trip cost is Rs",trip_cost,". Are you ready to book ? Please respond with Y or N")
 ready_to_pay=str(input())
 
@@ -50,3 +53,6 @@ elif(ready_to_pay=='Y'):
   print("Thank you for booking your ticket from",source_station,"to", destination)
 else:
   print("Booking error,try again")
+
+print("please enter the bus through rear dooe,we will display a message when the bus reaches your destination")  
+print("The journey is starting")
