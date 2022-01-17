@@ -1,6 +1,10 @@
-
 #assigning location with numbers
-
+def stops() :
+  print("1.Kohinoor")
+  print("2.University")
+  print("3.Kakkanchery")
+  print("4.Ramanattukara")
+  print("5.Feroke")
 
 #input_name
 print("Welcome to KT Bus Service,Please Enter Your Name: ")
@@ -22,12 +26,12 @@ else:
 
 #choosing source stop
 
-print("1.Kohinoor")
-print("2.University")
-print("3.Kakkanchery")
-print("4.Ramanattukara")
-print("5.Feroke")
+stops()
+
 source_station = int(input("choose source station(1/2/3/4/5): "))
+
+stops()
+
 destination=int(input("choose destination(1/2/3/4/5): "))
 
 
@@ -59,5 +63,5 @@ x=(1,2,3,4,5)
 for i in x:
   if (i==destination):
     print("Hello",passenger_name, "Bus has reached",destination, "which is your destination. Please get down")
-  else:
+  elif (i>source_station) and (i<destination):
       print("Hello",passenger_name , "Bus has reached",i, "which is NOT your destination. Please DONT get down") 
