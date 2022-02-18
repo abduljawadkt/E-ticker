@@ -1,10 +1,16 @@
-#assigning location with numbers
-def stops() :
-  print("1.Kohinoor")
-  print("2.University")
-  print("3.Kakkanchery")
-  print("4.Ramanattukara")
-  print("5.Feroke")
+#stop list
+stops=["0.Neerolpalam","1.Kohinoor","2.university","3.kakkanchery","4.Raamanttukara","5.feroke"]
+#stops without codes
+C=["Neerolpalam","Kohinoor","university","kakkanchery","Raamanttukara","feroke"]
+
+#function for fair calculation
+def farecalc():
+  fare=(destination-source_station)*10
+  return fare
+
+#defining function
+def stoplist(): 
+  return stops
 
 #input_name
 print("Welcome to KT Bus Service,Please Enter Your Name: ")
@@ -17,54 +23,55 @@ print("Hi",passenger_name,"Are you interested in booking seat for our Neerolapal
 choice=str(input())
 print(choice)
 
-if (choice=='N'):
-  print("Thank You for Choosing our service")
+if(choice=='N'):
+      print("Thank You for choosing our service")
+  
 elif (choice=='Y'):
     print("Select Source stop")
-else:
-  print("Syntax error")
+    
+    
+  #choosing source stop
 
-#choosing source stop
+print(stoplist())  
 
-stops()
+source_station = int(input("choose source station number for this,(0/1/2/3/4/5)"))
+print(stoplist())
 
-source_station = int(input("choose source station(1/2/3/4/5): "))
-
-stops()
-
-destination=int(input("choose destination(1/2/3/4/5): "))
+destination=int(input("choose destination number from,this(0/1/2/3/4/5): "))
 
 
 if(source_station>destination):
-  print("Destination stop should be after source stop, or you can book for our Feroke to Neerolpalam bus in future when the service is operational. Thank you for using our service")
+    print("Destination stop should be after source stop, or you can book for our Feroke to Neerolpalam bus in future when the service is operational. Thank you for using our service")
+        
+
+  
 else:
-  print("You are going from",source_station,"to",destination)
+  print("You are going from",C[source_station],"to",C[destination])
   print("proceeding to payment....")
-
-
 #payment method
-def ticket() :
-  trip_cost=(destination-source_station)*10
-  print("Your trip cost is Rs",trip_cost,". Are you ready to book ? Please respond with Y or N")
+print("your trip cost is:",farecalc())
 
-ticket()
-ready_to_pay=str(input())
+ready_to_pay=str(input("press Y if you are ready to pay,or if you are not ready to pay,press N"))
 
 #if customer is ready to pay
 if(ready_to_pay=='N'):
   print("Sorry to see you go, we will be pleased to welcome you again in future")
+  
 elif(ready_to_pay=='Y'):
   print("Thank you for booking your ticket from",source_station,"to", destination)
 else:
   print("Booking error,try again")
+  
 
 
-print("please enter the bus through rear dooe,we will display a message when the bus reaches your destination")  
+print("please enter the bus through the rear door,we will display a message when the bus reaches your destination")  
 print("The journey is starting")
 
-x=(1,2,3,4,5)
-for i in x:
+X=[]
+for j in range(source_station,destination):
+  X.append(j)
+for i in X:
   if (i==destination):
-    print("Hello",passenger_name, "Bus has reached",destination, "which is your destination. Please get down")
+    print("Hello",passenger_name, "Bus has reached",C[destination], "which is your destination. Please get down")
   elif (i>source_station) and (i<destination):
-      print("Hello",passenger_name , "Bus has reached",i, "which is NOT your destination. Please DONT get down") 
+      print("Hello",passenger_name , "Bus has reached",C[i], "which is NOT your destination. Please DONT get down") 
